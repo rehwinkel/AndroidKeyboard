@@ -7,8 +7,8 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.deerangle.ian.swearboard"
-        minSdkVersion 14
+        applicationId "com.deerangle.ian.keyboard"
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0.0"
@@ -16,7 +16,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -24,6 +24,10 @@ android {
         ndkBuild {
             path file('src/main/cpp/jni/Android.mk')
         }
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 
